@@ -13,7 +13,7 @@ intents.members = True
 client = discord.Client(intents=intents)
 @client.event
 async def on_ready():
-    guild = discord.utils.find(lambda g: g.name == GUILD, client.guilds)
+    guild = discord.utils.get(client.guilds, name=GUILD)
     print(
             f'{client.user} is connected to the following guild:\n'
             f'{guild.name}(id: {guild.id})'
